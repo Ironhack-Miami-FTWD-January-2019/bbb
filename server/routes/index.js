@@ -1,8 +1,9 @@
 const express = require('express');
 const { isLoggedIn } = require('../middlewares')
 const router = express.Router();
-const User = require('User')
+const User = require('../models/User')
 
+console.log('yoyoyo', User)
 
 router.get("/whatever", isLoggedIn, (req, res, next) => {
   console.log('zebra in whatever',req.user)
