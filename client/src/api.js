@@ -1,9 +1,10 @@
 import axios from 'axios'
 axios.defaults.withCredentials = true
 
+console.log(process.env.REACT_APP_SERVER)
 
 const service = axios.create({
-  baseURL: process.env.NODE_ENV === 'production' ? '/api' : 'http://localhost:5000/api',
+  baseURL: process.env.NODE_ENV === 'production' ? '/api' : process.env.REACT_APP_SERVER,
   withCredentials: true
 })
 
