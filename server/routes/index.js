@@ -8,7 +8,7 @@ console.log('yoyoyo', User)
 router.get("/whatever", isLoggedIn, (req, res, next) => {
   console.log('zebra in whatever',req.user)
   User.find().then(allUsers=>{
-    res.json({user:req.user, users:users})
+    res.json({user:req.user, users:allUsers})
   })
 })
 
