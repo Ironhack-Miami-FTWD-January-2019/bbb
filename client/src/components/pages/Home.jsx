@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Axios from 'axios';
 import api from '../../api'
-
+import {REACT_APP_SERVER} from '../../config'
 export default class Home extends Component {
 
   
@@ -11,7 +11,7 @@ export default class Home extends Component {
     console.log(api.getLocalStorageUser())
     console.log(process.env)
 
-    Axios.get(`https://diggitydoo.herokuapp.com/api/whatever`).then(res=>{
+    Axios.get(`${REACT_APP_SERVER}/whatever`).then(res=>{
       console.log(res, 'res')
     })
 
