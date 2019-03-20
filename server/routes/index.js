@@ -5,8 +5,10 @@ const router = express.Router();
 
 
 router.get("/whatever", isLoggedIn, (req, res, next) => {
-  console.log('in whatever',req.user)
-  res.json({user:req.user})
+  console.log('zebra in whatever',req.user)
+  User.find().then(allUsers=>{
+    res.json({user:req.user, users:users})
+  })
 })
 
 
