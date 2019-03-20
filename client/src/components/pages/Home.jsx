@@ -11,7 +11,7 @@ export default class Home extends Component {
     console.log(api.getLocalStorageUser())
     console.log(process.env)
 
-    Axios.get(`https://diggitydoo.herokuapp.com/whatever`).then(res=>{
+    Axios.get(`https://diggitydoo.herokuapp.com/api/whatever`).then(res=>{
       console.log(res, 'res')
     })
 
