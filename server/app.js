@@ -18,6 +18,8 @@ const debug = require('debug')(`${app_name}:${path.basename(__filename).split('.
 
 const app = express()
 
+
+
 app.use(nocache())
 
 // Set "Access-Control-Allow-Origin" header
@@ -29,14 +31,15 @@ app.use(nocache())
 //   credentials: true
 // }))
 
-// app.use(cors({
-//   credentials: true
-// }))
+app.use(cors({
+  credentials: true
+}))
+app.options('*', cors()) 
+
 app.use(logger('dev'))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(cookieParser())
-app.options('*', cors()) 
 // Set the public folder to "~/client/build/"
 // Example: http://localhost:5000/favicon.ico => Display "~/client/build/favicon.ico"
 app.use(express.static(path.join(__dirname, '../client/build')))
