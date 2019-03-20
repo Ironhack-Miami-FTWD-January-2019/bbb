@@ -9,9 +9,9 @@ export default class Home extends Component {
 
     console.log(api.isLoggedIn())
     console.log(api.getLocalStorageUser())
-    console.log(process.env.REACT_APP_SERVER)
-    
-    Axios.get(`${process.env.REACT_APP_SERVER}/whatever`).then(res=>{
+    console.log(process.env)
+
+    Axios.get(`https://diggitydoo.herokuapp.com/whatever`).then(res=>{
       console.log(res, 'res')
     })
 
